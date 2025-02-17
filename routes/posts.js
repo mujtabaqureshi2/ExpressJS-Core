@@ -1,5 +1,4 @@
-const express = require('express');
-const { json } = require('express/lib/response');
+import express   from "express";
 
 const router = express.Router();
 
@@ -11,7 +10,7 @@ let posts = [
 
 ]
 
-router.get('/', (req,res) => {
+router.get('/',(req,res) => {
     const limit = parseInt(req.query.limit);
 
 
@@ -81,5 +80,5 @@ router.get('/:id', (req,res) => {
   
 
 
-    module.exports = router     
+export default router     
     

@@ -1,16 +1,21 @@
-const express = require('express');
-const path = require('path');
-const posts = require('./routes/posts')
+import express  from 'express';
+// const logger = require('./middleware/logger')
+import posts from './routes/posts.js'
+import logger from './middleware/logger.js'
 const port = process.env.PORT || 8000
 
 const app = express();
 app.use(express.urlencoded({ extended: true })); // Handles URL-encoded form data
 
+//Logger middleware
+app.use(logger) 
+
+
 
 //setup static folder
 // app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/api/posts', posts)
+app.use('/api/po sts', posts)
 
 
 // app.get('/', (req,res) => {
